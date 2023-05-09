@@ -74,33 +74,10 @@ class Animal {
     pic(): void;
   }
   
-  interface CanMiaou {
-    miaou(): void;
-  }
-  
-  interface Canwoaf {
-    woaf(): void;
-  }
-  
-  interface Canfly {
-    fly(): void;
-  }
-  
-  interface Canswim {
-    swim(): void;
-  }
-  
-  interface Caress {
-    caress: boolean;
-    color: string;
-    name: string;
-    caressable(): void;
-  }
   
   
-  interface CanNourrir {
-    color: string;
-  }
+  
+
   
 interface CanMiaou {
   miaou(): void;
@@ -150,14 +127,7 @@ interface CanMiaou {
     animal.swim();
   }
 
-  
-  function fly(animal: Canfly) {
-    animal.fly();
-  }
-  
-  function swim(animal: Canswim) {
-    animal.swim();
-  }
+
   
   function caresser(animal: Caress) {
     if (animal.caress === true) {
@@ -182,15 +152,16 @@ name : string;
 breed : string;
 }
 
-  const cat = new Cat("white", "Whiskers", "Persian");
-  const dog = new Dog("brown", "Rufus", "Labrador");
-  const bird = new Birds("green", "Parrot");
+  const cat = new Cat("black", "Whiskers", "Persian");
+  const dog = new Dog("black", "Rufus", "Labrador");
+  const bird = new Birds("Parrot");
   const fish = new Fish("orange", "Nemo", "Clownfish");
   const insect = new Insect("black", "Ant");
   
   takePic(cat);
   miaou(cat);
   caresser(cat);
+  nourrir(cat);
   
   takePic(dog);
   woaf(dog);
