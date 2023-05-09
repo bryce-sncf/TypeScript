@@ -64,7 +64,7 @@ class Animal {
     }
   }
   
-  class Insecte extends Animal {
+  class Insect extends Animal {
     constructor(color: string, name: string) {
       super(color, name);
     }
@@ -92,6 +92,8 @@ class Animal {
   
   interface Caress {
     caress: boolean;
+    color: string;
+    name: string;
     caressable(): void;
   }
   
@@ -120,7 +122,7 @@ class Animal {
     animal.swim();
   }
   
-  function caresser(animal: Animal) {
+  function caresser(animal: Caress) {
     if (animal.caress === true) {
       console.log(`Caress the ${animal.color} ${animal.name}`);
     } else {
@@ -142,7 +144,7 @@ class Animal {
   const dog = new Dog("brown", "Rufus", "Labrador");
   const bird = new Birds("green", "Parrot");
   const fish = new Fish("orange", "Nemo", "Clownfish");
-  const insect = new Insecte("black", "Ant");
+  const insect = new Insect("black", "Ant");
   
   takePic(cat);
   miaou(cat);
