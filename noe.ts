@@ -1,5 +1,5 @@
 class Animal {
-    color: string;
+    color?: string
     name: string;
     caress : boolean;
     constructor(color: string, name: string) {
@@ -102,6 +102,34 @@ class Animal {
     color: string;
   }
   
+interface CanMiaou {
+  miaou(): void;
+  }
+  
+  interface Canwoaf {
+    woaf(): void;
+  }
+  
+  interface Canfly {
+    fly(): void;
+  }
+  
+  interface Canswim {
+    swim(): void;
+  }
+  
+  interface Caress {
+    caress: boolean;
+    color: string;
+    name: string;
+    caressable(): void;
+  }
+  
+  
+  interface CanNourrir {
+    color: string;
+  }
+  
   function takePic(animal: CanPic) {
     animal.pic();
   }
@@ -113,6 +141,15 @@ class Animal {
   function woaf(animal: Canwoaf) {
     animal.woaf();
   }
+  
+  function fly(animal: Canfly) {
+    animal.fly();
+  }
+  
+  function swim(animal: Canswim) {
+    animal.swim();
+  }
+
   
   function fly(animal: Canfly) {
     animal.fly();
@@ -139,7 +176,12 @@ class Animal {
     }
   }
   
-  
+  interface Cat{
+color?: string;
+name : string;
+breed : string;
+}
+
   const cat = new Cat("white", "Whiskers", "Persian");
   const dog = new Dog("brown", "Rufus", "Labrador");
   const bird = new Birds("green", "Parrot");
